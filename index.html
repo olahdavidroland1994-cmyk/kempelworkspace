@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kempel Workspace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">Kempel Workspace</div>
+    <nav class="links">
+      <a href="#about">Rólunk</a>
+      <a href="#features">Funkciók</a>
+      <a href="#contact">Kapcsolat</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <h1>Kempel Workspace</h1>
+    <p>Hamarosan indul. Egy hely, ahol a munkáid, projektjeid és közösséged együtt lehet.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#contact">Értesítést kérek</a>
+      <a class="btn" href="#features">Mit tud majd?</a>
+    </div>
+  </main>
+
+  <section id="about" class="section">
+    <h2>Miről szól?</h2>
+    <p>
+      A Kempel Workspace egy modern webes felület lesz, ahol később bejelentkezés, jogosultságok,
+      és közösségi funkciók (pl. fórum) is megjelenhetnek.
+    </p>
+  </section>
+
+  <section id="features" class="section">
+    <h2>Tervezett funkciók</h2>
+    <ul class="cards">
+      <li class="card">
+        <h3>Belépés & regisztráció</h3>
+        <p>Biztonságos fiókok, erős jelszó-szabályokkal.</p>
+      </li>
+      <li class="card">
+        <h3>Fórum</h3>
+        <p>Posztolás, komment, moderálás – közösségi tér.</p>
+      </li>
+      <li class="card">
+        <h3>Munkák feltöltése</h3>
+        <p>Projektjeid megosztása, később akár portfólióként is.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Kapcsolat</h2>
+    <p>Írd be az e-mail címed (most csak minta):</p>
+
+    <form class="form" onsubmit="return fakeSubmit(event)">
+      <input type="email" placeholder="email@példa.hu" required />
+      <button class="btn primary" type="submit">Küldés</button>
+    </form>
+
+    <p class="hint" id="hint"></p>
+  </section>
+
+  <footer class="footer">
+    <small>© <span id="y"></span> Kempel Workspace</small>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    function fakeSubmit(e){
+      e.preventDefault();
+      document.getElementById("hint").textContent =
+        "Kész! (Ez még csak demo — később lesz valódi feliratkozás.)";
+      return false;
+    }
+  </script>
+</body>
+</html>
